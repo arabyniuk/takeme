@@ -1,5 +1,26 @@
 Rails.application.routes.draw do
-  get 'tweets' => 'tweets#index'
-  get 'tweets/new' => 'tweets#new'
+  devise_for :users
+  root 'tweets#index'
+  get 'tweets/timeline' => 'tweets#timeline'
   
+  resources :tweets do
+    resources :comments, only: [:create]
+
+    collection do
+      get 'search'
+    end
+
+  end
+  resources :users, only: [:show]
+
+
 end
+
+  # get 'tweets' => 'tweets#index'
+  # get 'tweets/new' => 'tweets#new'
+  # post  'tweets'  => 'tweets#create'
+  # delete 'tweets/:id' => 'tweets#destroy'
+  # patch 'tweets/:id' => 'tweets#update'
+  # get 'tweets/:id/edit' => 'tweets#edit'
+  # get 'users/:id' => 'users#show'
+  # get 'tweets/:id' => 'tweets#show'

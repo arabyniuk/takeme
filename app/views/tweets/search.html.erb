@@ -1,0 +1,30 @@
+
+
+ 
+<div class = "contents row">
+
+<TABLE BORDER="1" WIDTH="600" CELLSPACING="0" CELLPADDING="0"> 
+<p><%= params[:keyword] %>の投稿一覧</p>
+<% @tweets.each do |tweet| %>
+
+
+<tr>
+
+<th>
+<%= tweet.user.name %>
+  </th><<th>
+
+<%= tweet.place %>
+</th><th>
+<%= tweet.day %>
+</th><th>
+<%= tweet.message %>
+</th>
+ </tr>
+<% end %>
+
+  </table>
+
+<br>
+
+</div>

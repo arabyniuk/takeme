@@ -1,0 +1,44 @@
+<div class="contents row">
+<% if user_signed_in? && current_user.id == @tweet.user_id %>
+  <ul class="more_list">
+    <li>
+      <%= link_to 'Edit',"/tweets/#{@tweet.id}/edit", method: :get %>
+    </li>
+    <li>
+      <%= link_to 'Delete',"/tweets/#{@tweet.id}", method: :delete %>
+    </li>
+  </ul>
+  </div>
+  <% end %>
+
+  <p>
+  <%= @tweet.message %>
+  </p>
+  <span class="name">
+    <a href="/users/<%= @tweet.user.id %>">
+      <span>Poster : </span><%= @tweet.user.name %>
+    </a>
+  </span>
+
+  <div class="container">
+    <% if current_user %>
+      <%= form_tag("/tweets/#{@tweet.id}/comments", method: :post) do %>
+        <textarea cols="30" name="message" placeholder="Comment" rows="2"></textarea>
+        <input type="submit" value="SENT">
+      <% end %>
+    <% end %>
+
+   <div class="comments">
+     <h4>Comments</h4>
+     <% if @comments %>
+       <% @comments.each do |comment| %>
+         <p>
+           <strong><%= link_to comment.user.name,"/users/#{comment.user_id}" %>:</strong>
+           <%= comment.message %>
+         </p>
+         <% end %>
+         <% end %>
+    </div>
+  </div>
+</div>
+
