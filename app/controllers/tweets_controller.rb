@@ -48,10 +48,10 @@ class TweetsController < ApplicationController
 
 end
 
-def sendmail
-  @mail=NoticeMailer.sendmail_confirm(1).deliver
-  render text: "Success!"
-end
+# def sendmail
+#   @mail=NoticeMailer.sendmail_confirm(1).deliver
+#   render text: "Success!"
+# end
 
 
 private

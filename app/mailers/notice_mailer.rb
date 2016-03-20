@@ -1,12 +1,12 @@
-class NoticeMailer <  ActionMailer::Base
-
-  default from: 'tatsuya.takemura@gmail.com'
-
+class NoticeMailer <  ApplicationMailer
 
   def sendmail_confirm(user)
 
-    @user = User.find(user)
+    @user = user
 
-    mail(to: @user.email , subject: 'Thanks')
+   puts @user
+
+    mail to:       user.email,
+         subject: 'こんにちは'
   end
 end
