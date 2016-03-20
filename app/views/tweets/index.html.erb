@@ -1,24 +1,20 @@
+
 <div class = "maintitle">
     <P>Brali</p>
+</div>
 
+
+
+<!--<%= form_tag('/tweets/search', method: :get) do %>
+-->
+
+<%= form_for(@place) do |f| %>
 <div class = "search">
-
-<%= form_tag('/tweets/search', method: :get) do %>
-
-<input placeholder="Place" name="keyword" id="keyword" value="" type="text" />  
-<input type="image" src="images/btn.gif" alt="検索" name="searchBtn" id="searchBtn" />
-
- <% end %>
-
-<form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
-</form>
-
+<%= f.search_field :keyword, size:10, maxlength:15 %><br/>
 </div>
 
+<div class="actions">
+<%= f.submit %>
 </div>
 
-<end>
-
-
-
- <!-- <input class="search__query" name="keyword" placeholder="Search" type="text" value=""><button class="btn-search" title="検索" type="submit"><i class="icon-search"></i></button></input> -->
+<% end %>
