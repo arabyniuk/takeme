@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta http-equiv="refresh">
 </head>
 <body>
 
@@ -12,12 +13,15 @@
     <div class="header__bar row">
       <h1 class="grid-6">
        <ul class="user__info">
-       <li><a href="/">TakeMe</a></li>
+       <li><a href="/">Brari</a></li> 
        <li><a href="/tweets/timeline">TimeLine </a></li></h1>
+
+
       </ul>
       <% if user_signed_in? %>
         <div class="user_nav grid-6">
-          <span><%= current_user.name %>
+          <span>
+<%= image_tag current_user.avatar.url(:small) %>
             <ul class="user__info">
               <li>
                 <a href="/users/<%= current_user.id %>">My Page</a>
@@ -27,6 +31,7 @@
           </span>
           <a class="post" href="/tweets/new">POST</a>
         </div>
+
       <% else %>
         <div class="grid-6">
           <%= link_to "Log in", new_user_session_path, class: 'post' %>

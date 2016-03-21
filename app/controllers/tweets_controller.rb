@@ -1,15 +1,13 @@
 class TweetsController < ApplicationController
 
   before_action :move_to_index, except: :index
-  def index
-    # @tweets = Tweet.all.order("created_at DESC").page(params[:page]).per(5)
-    # @tweets = Tweet.includes(:user).order("created_at DESC").page(params[:page]).per(5)
 
+  def index
   end
 
   def new
   end
-  
+
   def create
     Tweet.create(place: tweet_params[:place], day: tweet_params[:day], message: tweet_params[:message], user_id: current_user.id)
     # Tweet.create(name: params[:name], place: params[:place], day: params[:day], message: params[:message])
@@ -42,6 +40,11 @@ class TweetsController < ApplicationController
     @tweets = Tweet.includes(:user).order("created_at DESC").page(params[:page]).per(10)
 
   end
+
+  def form_for
+    @place = Place.new
+  end
+  
 
  def search
   @tweets = Tweet.where('place LIKE(?)',"%#{params[:keyword]}%").limit(10)

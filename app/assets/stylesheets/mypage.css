@@ -1,0 +1,35 @@
+
+.mypage{
+  margin:0 auto;
+ font-family: "Times New Roman", Times, serif;
+ color: black;
+
+}
+
+.mypage-left{
+
+}
+
+
+.mypage-main{
+
+
+
+}
+
+.mypage-name {
+  font-size: 2.0em;
+  font-weight: bold;
+  font-family: Lato, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.mypage-place {
+  font-size: 1.5em;
+  font-family: Lato, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+}
+
+.mypage-fb {
+  font-size: 1.0em;
+  font-family: Lato, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+
+}

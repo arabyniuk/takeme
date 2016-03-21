@@ -1,20 +1,30 @@
 
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvhoPfz4HASHTDQGVir2N5CKcwIdshf3M&libraries=places&sensor=false&language=en">
+
+</script>
+
 <div class = "maintitle">
     <P>Brali</p>
-</div>
 
 
 
-<!--<%= form_tag('/tweets/search', method: :get) do %>
--->
-
-<%= form_for(@place) do |f| %>
 <div class = "search">
-<%= f.search_field :keyword, size:10, maxlength:15 %><br/>
-</div>
 
-<div class="actions">
-<%= f.submit %>
-</div>
+<%= form_tag('/tweets/search', method: :get) do %>
 
-<% end %>
+<input name="keyword" id="keyword" value="" type="text" />
+
+ <% end %>
+
+
+<script type="text/javascript">
+
+    var input = document.getElementById('keyword');
+    var options = {
+        types: ['(cities)'],
+    };
+    google.maps.event.addDomListener( window, 'load');
+    autocomplete = new google.maps.places.Autocomplete( input, options);
+</script>
+

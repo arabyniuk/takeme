@@ -1,18 +1,55 @@
-<!-- <div class = "contents row"> -->
-  
 
+<div class= "mypage">
+
+<div class = "contents row">
+
+
+
+<div class="mypage-left">
+
+  <%= image_tag @user.avatar.url(:medium) %>
+
+
+</div>
+
+
+<div class="mypage-main">
+   <div class="mypage-name">
+   <%= @user.name %>
+   </h1>
+  </div>
+<div class="mypage-place">
+  <%= @user.place %>
+  </div>
+  <br>
+   <div class="mypage-fb">
+     <a href = "<%= @user.fb %>"><%= @user.fb %></a>
+     
+   </div>
+ <% if current_user.id == @id %>
+      <div class="profile_edit">
+        <%= link_to "プロフィール編集", edit_user_path(current_user), {:class => "btn btn-primary withripple" }%>
+      </div>
+    <% end %>
+
+
+<br>
+<br>
+<br>
+<br>
 
   <p><%= @name %>さんの投稿一覧</p>
   <% @tweets.each do |tweet| %>
-     <!--  <div class = "content_post"> -->
-     <dev >
       <p>
       <%= tweet.message %>
     </p>
     
-  </div>
   <% end %>
   
 
- <!--  </div> -->
+
+</div>
+
+  </div>
+
 
