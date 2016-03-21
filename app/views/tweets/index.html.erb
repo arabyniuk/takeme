@@ -1,8 +1,8 @@
+<!-- GoogleのAPI> -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvhoPfz4HASHTDQGVir2N5CKcwIdshf3M&libraries=places&language=en">
+  </script>
 
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvhoPfz4HASHTDQGVir2N5CKcwIdshf3M&libraries=places&sensor=false&language=en">
-
-</script>
 
 <div class = "maintitle">
     <P>Brali</p>
@@ -10,21 +10,24 @@
 
 
 <div class = "search">
-
 <%= form_tag('/tweets/search', method: :get) do %>
 
-<input name="keyword" id="keyword" value="" type="text" />
+<input name="keyword" id="keyword" value="" type="text">
+<button id="btn-search" title="検索" type="submit"></button>
+
+</input>
+
+  </div>
 
  <% end %>
 
 
 <script type="text/javascript">
 
-    var input = document.getElementById('keyword');
+var input = document.getElementById( 'keyword');
     var options = {
         types: ['(cities)'],
     };
-    google.maps.event.addDomListener( window, 'load');
     autocomplete = new google.maps.places.Autocomplete( input, options);
+    
 </script>
-
