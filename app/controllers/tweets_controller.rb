@@ -37,7 +37,7 @@ class TweetsController < ApplicationController
   end
 
   def timeline
-    @tweets = Tweet.includes(:user).order("created_at DESC").page(params[:page]).per(10)
+    @tweets = Tweet.includes(:user).order("day").page(params[:page]).per(10)
 
   end
 
@@ -47,7 +47,10 @@ class TweetsController < ApplicationController
   
 
  def search
-  @tweets = Tweet.where('place LIKE(?)',"%#{params[:keyword]}%").limit(10)
+  # @tweets = Tweet.where('place LIKE(?)',"%#{params[:keyword]}%").limit(10)
+  @tweets = Tweet.where('place LIKE(?)',"%#{params[:keyword]}%").order("day").page(params[:page]).per(5)
+  @user = User.find_by(id: @user_id)
+  
 
 end
 

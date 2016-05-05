@@ -1,25 +1,48 @@
 
+<!-- カレンダー　-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker.min.js"></script>
+
+<link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css" rel="stylesheet" />
+
+<!-- < GOOGLE API > -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvhoPfz4HASHTDQGVir2N5CKcwIdshf3M&libraries=places&sensor=false&language=en">
   </script>
 
+<body>
+
+<!-- 本文 -->
 <div class="contents row"> 
   <div class="container">
 
   <%= form_tag('/tweets', method: :post) do %>
-    <h3>
-      POST
-    </h3>
+    
+  <h3> POST </h3>
+    
     <input id="place" type="text" name="place">
 
+    <input placeholder="visiting date : mm/dd/yyyy" id="datepicker" type="text" name="day">
 
-    <input placeholder="day" type="text" name="day">
-    <textarea cols="30" placeholder="text" name="message" rows="10"></textarea>
+    <textarea cols="30" placeholder="message" name="message" rows="5"></textarea>
     <input type="submit" value="SENT">
   <% end %>
 
   </div>
 </div>
 
+
+<!-- カレンダー　-->
+<script type="text/javascript">
+$(function(){
+  $("#datepicker").datepicker({
+  numberOfMonths: 1,
+  // showButtonPanel: true
+ });
+});
+</script>
+
+
+<!-- < GOOGLE API > -->
 <script type="text/javascript">
     var input = document.getElementById('place');
     var options = {
@@ -28,3 +51,5 @@
     google.maps.event.addDomListener( window, 'load');
     autocomplete = new google.maps.places.Autocomplete( input, options);
 </script>
+
+  </body>

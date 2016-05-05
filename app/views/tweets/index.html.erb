@@ -1,33 +1,88 @@
+
+
 <!-- GoogleのAPI> -->
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvhoPfz4HASHTDQGVir2N5CKcwIdshf3M&libraries=places&language=en">
   </script>
+
+<script type="text/javascript">
+var input = document.getElementById( 'keyword');
+    var options = {
+        types: ['(cities)'],
+    };
+    autocomplete = new google.maps.places.Autocomplete( input, options);
+</script>
+
 
 
 
 <div class = "maintitle">
     <P>Brali</p>
 
+</div>
 
+<div class="contents">
+<div class="contents1">
+<BR><BR>
+<h2> Meet new people !</h2>
+<p class="text1">
+最近、海外からたくさんの観光客が訪問しています。</p>
+ <p class="text1">
+せっかくだから、交流したいと思っているけど、</p>
+<p class="text1">
+英語できないし。</p>
+ <p class="text1">
+なかなか、初めの一歩が踏み出せない。</p>
+ <p class="text1">
+でも、そんな勇気ないなんて言わないで、</p>
+ <p class="text1">
+とりあえず、検索してみよう。</p>
+ <p class="text1">
+誰かが、あなたを待っているはず。</p>
+<br>
 
-<div class = "search">
+<div class = "search2">
 <%= form_tag('/tweets/search', method: :get) do %>
-
-<input name="keyword" id="keyword" value="" type="text">
-<button id="btn-search" title="検索" type="submit"></button>
-
+<input placeholder="Search: Enter a location" name="keyword" id="keyword2" value="" type="text">
+<button id="btn-search" title="search" type="submit"></button>
 </input>
-
   </div>
+  <% end %>
 
- <% end %>
+      </div>
 
 
-<script type="text/javascript">
+<div class="contents2">
+<BR><BR>
+<h2> Life is an adventure</h2>
+ <p class="text1">
+旅行会社が用意したパックツアーにそろそろ飽きた頃</p>
+ <p class="text1">
+現地の人と交流したい。</p>
+<p class="text1">
+現地の人しか知らない美味しい店。</p>
+<p class="text1">
+現地の人しか知らない観光スポット</p>
+ <p class="text1">
+でも、そんな勇気ないなんて言わないで、</p>
+ <p class="text1">
+とりあえず、登録してみよう。</p>
+ <p class="text1">
+新しい世界が広がるはず</p>
+<br>
 
-var input = document.getElementById( 'keyword');
-    var options = {
-        types: ['(cities)'],
-    };
-    autocomplete = new google.maps.places.Autocomplete( input, options);
-    
-</script>
+
+
+<center>
+<div class="sign_up2">
+ <%= link_to "Sign up", new_user_registration_path, class: 'post' %>
+</div>
+  </center>
+
+</div>
+
+
+
+
+</body>
+
+

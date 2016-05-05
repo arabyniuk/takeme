@@ -464,7 +464,7 @@ ul li {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 660px;
+  max-width: 800px;
   *zoom: 1;
 }
 .row .grid-1,
@@ -499,7 +499,7 @@ ul li {
   width: 39.86667%;
 }
 .row .grid-6 {
-  width: 48.2%;
+  width: 30.0%;
 }
 .row .grid-7 {
   width: 56.53333%;

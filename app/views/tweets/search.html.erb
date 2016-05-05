@@ -1,30 +1,54 @@
 
-
- 
 <div class = "contents row">
 
-<TABLE BORDER="1" WIDTH="600" CELLSPACING="0" CELLPADDING="0"> 
+<table BORDER="1" WIDTH="600">
+
+<div class="list-table">
+
 <p><%= params[:keyword] %>の投稿一覧</p>
 <% @tweets.each do |tweet| %>
 
 
 <tr>
+<td rowspan="6">
+<a href="/tweets/<%= tweet.id %>">
 
-<th>
+<%= image_tag tweet.user.avatar.url(:thumb) %>
+</a>
+</td>
+
+<td><a href="/users/<%= tweet.user.id %>">
 <%= tweet.user.name %>
-  </th><<th>
+</a>
+</td>
+</tr>
 
-<%= tweet.place %>
-</th><th>
-<%= tweet.day %>
-</th><th>
-<%= tweet.message %>
-</th>
- </tr>
+<tr><td>From: <%= tweet.user.place %></td>
+
+</tr>
+<tr>
+<td>Language: <%= tweet.user.language1 %></td>
+</tr>
+
+</tr>
+<tr>
+<td>Visiting: <%= tweet.place %></td>
+</tr>
+
+<tr>
+<td><%= tweet.day %></td>
+</tr>
+<tr>
+<td><%= tweet.message %></td>
+</tr>
+
+ 
 <% end %>
+</table>
+<%= paginate(@tweets) %>
 
-  </table>
-
-<br>
-
+  </div>
+ 
 </div>
+
+

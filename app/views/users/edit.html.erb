@@ -16,11 +16,18 @@
         Name:
         <%= f.text_field :name %>
         <br>
+        Language:
+        <%= f.text_field :language1 %>
+        <br>
+        Second Language:
+        <%= f.text_field :language2 %>
+        <br>
         Facebook:
         <%= f.text_field :fb %>
         <br>
         Residence:
         <%= f.text_field :place, id: "place" %>
+        
         <script type="text/javascript">
         var input = document.getElementById('place');
         var options = {

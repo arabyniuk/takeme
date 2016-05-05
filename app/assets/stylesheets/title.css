@@ -1,4 +1,7 @@
 
+
+
+
 .maintitle{
  margin:0 auto;
  font-family: "Times New Roman", Times, serif;
@@ -6,23 +9,21 @@
  background-image:url(images/back.jpg);
  
  background-attachment: fixed !important;
-  background-position: center center;
+  background-position: center 60px;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   font-size: 120px;
   line-height: 100%;
-  padding: 60px 0px 0px;
+  padding: 30px 0px 170px;
   margin:0 0 0;
-  text-align: center;
+  text-align: 0px;
+  text-indent: 50px;
 
   text-shadow: 0 0 50px black;
 }
 
-.search{
-font-size: 12px;
-margin: 0px 200px 0px;
-}
+
 
 #btn-search{
 
@@ -47,17 +48,123 @@ margin: 0px 200px 0px;
     left: 0px;
 }
 
+.search{
+  float: left;
+  
+}
 
 #searchform {  
-    position: relative;   
-}  
+ 
+ }  
+ 
 #keyword {
-    width: 300px;
+    width: 200px;
     height: 30px;
     font-size: 20px;
-    border: none;
     padding: 0;
     color: black;
 }  
+
+
+
+h2{
+  font-size: 34px;
+  color: #fff;
+  font-family: sans-serif;
+  margin: 0;
+  border: 0;
+  padding: 0px 0 20px 0;
+  text-align: center;
+ }
+
+
+.contents {
+  margin:0 auto;
+  width: 900px;
+  height: auto;
+  padding: 40px 0px ;
+}
+
+.contents1{
+  background-image:url(images/back2.jpg);
+  background-position: center 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 0px 70px 200px;
+
+}
+
+.contents2{
+  background-image:url(images/back3.jpg);
+  background-position: center 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+   padding: 20px 30px 20px ;
+}
+
+.text1{
+  color: #fff;
+  font-size: 18px;
+  line-height: 26px;
+  padding-right: 50px;
+  padding-left:  150px;
+}
+.text2{
+  color: #fff;
+  font-size: 18px;
+  line-height: 26px;
+  padding-right: 150px;
+  padding-left:  150px;
+}
+
+.search2{
+  padding-left:  200px;
+}
+
+#searchform2 {  
+ 
+ }  
+ 
+#keyword2 {
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+    padding: 0;
+    color: black;
+} 
+
+
+.sign_up2{
+     width:250px;
+     color:black;
+  background:#ffffff;
+  font-size:20px;
+  font-weight:bold;
+  text-align:center;
+  display:block;
+  text-decoration:none;
+  border:1px solid #225588;
+  padding:12px 0 8px 0;
+border-radius:5px;
+
+}
+
+
+
+
+footer{
+  margin :40px 0px 0px 0px;
+  clear:both
+  height: 80px;
+  background-color: grey;
+  padding: 0px 0px 0px 0px;
+}
+
+.text-footer{
+  color: #fff;
+  font-size: 15px;
+  line-height: 26px;
+  padding: 45px 0px 0px 0px;
+}
 
 
