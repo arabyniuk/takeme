@@ -52,3 +52,8 @@ production:
   database: takeme_production
   username: takeme
   password: <%= ENV['TAKEME_DATABASE_PASSWORD'] %>
+
+
+  encoding: utf8  
+  adapter: postgresql  
+  port: 5432  
