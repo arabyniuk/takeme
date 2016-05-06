@@ -431,7 +431,7 @@ footer {
 }
 
 .contents1{
-  background-image:url(images/back2.jpg);
+  background-image:image-url("back2.jpg");
   background-position: center 10px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -440,7 +440,7 @@ footer {
 }
 
 .contents2{
-  background-image:url(images/back3.jpg);
+  background-image:image-url("back3.jpg");
   background-position: center 20px;
   background-repeat: no-repeat;
   background-size: cover;
