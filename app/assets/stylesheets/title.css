@@ -2,26 +2,6 @@
 
 
 
-.maintitle{
- margin:0 auto;
- font-family: "Times New Roman", Times, serif;
- color: white;
- background-image:url(images/back.jpg);
- 
- background-attachment: fixed !important;
-  background-position: center 60px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  font-size: 120px;
-  line-height: 100%;
-  padding: 30px 0px 170px;
-  margin:0 0 0;
-  text-align: 0px;
-  text-indent: 50px;
-
-  text-shadow: 0 0 50px black;
-}
 
 
 
@@ -78,29 +58,7 @@ h2{
  }
 
 
-.contents {
-  margin:0 auto;
-  width: 900px;
-  height: auto;
-  padding: 40px 0px ;
-}
 
-.contents1{
-  background-image:url(images/back2.jpg);
-  background-position: center 10px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 50px 0px 70px 200px;
-
-}
-
-.contents2{
-  background-image:url(images/back3.jpg);
-  background-position: center 20px;
-  background-repeat: no-repeat;
-  background-size: cover;
-   padding: 20px 30px 20px ;
-}
 
 .text1{
   color: #fff;
