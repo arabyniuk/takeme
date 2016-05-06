@@ -56,4 +56,5 @@ gem 'meta-tags'
 
 group :production do
   gem 'rails_12factor'
+  gem 'pg'
 end
