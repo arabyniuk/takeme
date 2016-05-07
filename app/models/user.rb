@@ -14,11 +14,14 @@ class User < ActiveRecord::Base
 
   validates_attachment_content_type :image, content_type: ["image/jpg","image/jpeg","image/png"]
 
+
+
+
   # has_attached_file :image, styles: { medium:"300x300>", thumb:"150x150>", small:"45x45>"} :storage => :s3,
   # :s3_credentials => "#{Rails.root}/config/s3.yml",
   # :path => ":attachment/:id/:style.:extension"
 
 # has_attached_file :avatar, styles: { medium:"300x300>", thumb:"150x150>", small:"45x45>"}
-#   
+#
 
 end
