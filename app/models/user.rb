@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
   :storage =>:s3,
   :bucket => S3_BUCKET,
   :path => ":attachment/:id/:style.:extension",
-  :url  => "/brali-image/images/:id/:style/:extension"
+  :url => ':s3_domain_url'
+  #:url  => "/brali-image/images/:id/:style/:extension"
 
   # validates_attachment_content_type :image, content_type: ["image/jpg","image/jpeg","image/png"]
   validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
