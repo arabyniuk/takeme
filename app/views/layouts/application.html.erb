@@ -49,7 +49,7 @@ var input = document.getElementById( 'keyword');
       <% if user_signed_in? %>
         <div class="user_nav grid-6">
           <span>
-           <%= image_tag current_user.avatar.url(:small) %>
+           <%= image_tag current_user.image.url(:small) %>
             <ul class="user_info">
               <li>
                 <a href="/users/<%= current_user.id %>">My Page</a>

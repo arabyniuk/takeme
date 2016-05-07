@@ -7,7 +7,7 @@
 
 <div class="mypage-left">
 
-  <%= image_tag @user.avatar.url(:thumb) %>
+  <%= image_tag @user.image.url(:thumb) %>
 
 
 </div>
@@ -52,7 +52,7 @@
 <td rowspan="6">
 <a href="/tweets/<%= tweet.id %>">
 
-<%= image_tag tweet.user.avatar.url(:thumb) %>
+<%= image_tag tweet.user.image.url(:thumb) %>
 </a>
 </td>
 

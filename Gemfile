@@ -50,7 +50,8 @@ gem 'compass-rails','~> 2.0'
 gem 'sprockets'
 gem 'kaminari'
 gem 'devise'
-gem "paperclip"
+gem 'paperclip'
+gem 'aws-sdk'
 gem 'jquery-turbolinks'
 gem 'meta-tags'
 
