@@ -5,21 +5,6 @@
 
 
 
-#btn-search{
-
-    width:30px;
-    height:30px;
-    padding:0;
-    border:0;
-    background:url(images/btn.gif) no-repeat left top;
-    text-indent:-9898px;
-    font-size: 0px;
-    line-height: 0px;
-    cursor:pointer;
-    background-position: center center;
-
-
-}
 
 #searchBtn {
     float: right;
