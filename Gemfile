@@ -51,7 +51,7 @@ gem 'sprockets'
 gem 'kaminari'
 gem 'devise'
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 gem 'jquery-turbolinks'
 gem 'meta-tags'
 
