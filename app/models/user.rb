@@ -3,11 +3,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # 以下を追記
-<<<<<<< HEAD
-=======
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>", small:"45x45>"}, storage: :s3, s3_credentials: S3_CREDENTIALS
   validates_attachment_content_type :avatar, content_type: ["image/jpg","image/jpeg","image/png"]
->>>>>>> a98e677757e277f8353e566c1069e8870a178fcc
 
   has_many :tweets
   has_many :comments
