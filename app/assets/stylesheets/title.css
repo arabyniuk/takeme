@@ -1,11 +1,5 @@
 
 
-
-
-
-
-
-
 #searchBtn {
     float: right;
     top: 0;
@@ -23,7 +17,7 @@
  }  
  
 #keyword {
-    width: 200px;
+    width: 220px;
     height: 30px;
     font-size: 20px;
     padding: 0;
