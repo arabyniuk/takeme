@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   has_attached_file :image, styles: { medium:"300x300>", thumb:"150x150>", small:"45x45>"},
   :storage =>:s3,
-  :S3_CREDENTIALS => "#{Rails.root}/config/s3.yml",
+  :S3_CREDENTIALS => S3_CREDENTIALS
   :path => ":attachment/:id/:style.:extension",
   :url  => "/brali-image/images/:id/:style/:extension"
 
