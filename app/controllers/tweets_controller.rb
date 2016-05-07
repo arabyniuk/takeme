@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
 
-  before_action :move_to_index, except: :index
+  # before_action :move_to_index, except: :index
+  before_action :move_to_index, except: [:index, :search]
 
   def index
   end
