@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
   :path => ":attachment/:id/:style.:extension",
   :url  => "/brali-image/images/:id/:style/:extension"
 
-  validates_attachment_content_type :image, content_type: ["image/jpg","image/jpeg","image/png"]
+  # validates_attachment_content_type :image, content_type: ["image/jpg","image/jpeg","image/png"]
+  validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 
 
 
