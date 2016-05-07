@@ -1,8 +1,8 @@
-# initializers/s3.rb
 if Rails.env == "production"
-  # set credentials from ENV hash
-  S3_CREDENTIALS = { :access_key_id => ENV['S3_KEY'], :secret_access_key => ENV['S3_SECRET'], :bucket => ENV['S3_BUCKET']}
+  AWS.config(access_key_id: ENV["S3_KEY"], secret_access_key: ENV["S3_SECRET"])
+  S3_BUCKET=ENV["S3_BUCKET"]
 else
-  # get credentials from YML file
-  S3_CREDENTIALS = Rails.root.join("config/s3.yml")
+  config = YAML.load(File.read("config/s3.yml"))
+  AWS.config(access_key_id: config["access_key_id"], secret_access_key: config["secret_access_key"])
+  S3_BUCKET=config["bucket"]
 end
