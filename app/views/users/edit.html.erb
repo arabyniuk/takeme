@@ -7,7 +7,7 @@
     <%= form_for current_user,
     :html => { :multipart => true } do |f| %>
 
-    <h2>Profile Picture</h2>
+    <h3>Profile Picture</h3>
       <div class="form-group file">
 
      <!--  <%= image_tag current_user.image.url if current_user.image.present? %> 
@@ -17,7 +17,7 @@
       <%= f.file_field :image %>
       </div>
 
-      <h2>Information</h2>
+      <h3>Information</h3>
       <div class="form-group">
         <div class="col-lg-6">
         Name:
