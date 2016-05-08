@@ -26,7 +26,7 @@
     <% if current_user %>
       <%= form_tag("/tweets/#{@tweet.id}/comments", method: :post) do %>
         <textarea cols="30" name="message" placeholder="Comment" rows="2"></textarea>
-        <input type="submit" value="SENT">
+        <input type="submit" value="SEND">
       <% end %>
     <% end %>
 
