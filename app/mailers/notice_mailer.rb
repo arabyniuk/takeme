@@ -6,7 +6,7 @@ class NoticeMailer <  ApplicationMailer
 
    puts @user
 
-    mail to:       user.email,
+    mail to:       user.id,
          subject: 'こんにちは'
   end
 end
