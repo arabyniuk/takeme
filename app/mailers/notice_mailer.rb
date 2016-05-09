@@ -6,8 +6,7 @@ class NoticeMailer <  ApplicationMailer
 
    puts @user
 
-    mail to: @comment.user_id
-    # user.id,
+    mail to: @comment.user_id,
          subject: 'こんにちは'
   end
 end

@@ -5,15 +5,15 @@ Rails.application.configure do
   config.cache_classes = true
 
 
- config.action_mailer.smtp_settings = {
-  port:                  587,
-  address:               'smtp.gmail.com',
-  domain:                'smtp.gmail.com',
-  user_name:             'tatsuya.takemura@gmail.com',
-  password:              'tatsuya93033',
-  authentication:        'login',
-  enable_starttls_auto:  true
-}
+#  config.action_mailer.smtp_settings = {
+#   port:                  587,
+#   address:               'smtp.gmail.com',
+#   domain:                'smtp.gmail.com',
+#   user_name:             'tatsuya.takemura@gmail.com',
+#   password:              'tatsuya93033',
+#   authentication:        'login',
+#   enable_starttls_auto:  true
+# }
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers

@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     
     redirect_to "/tweets/#{@comment.tweet.id}"
 
-     #NoticeMailer.sendmail_confirm(current_user.id).deliver
+    #NoticeMailer.sendmail_confirm(current_user.id).deliver
     NoticeMailer.sendmail_confirm(@comment.user_id).deliver
    end
 
