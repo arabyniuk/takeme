@@ -4,6 +4,16 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
+config.action_mailer.smtp_settings = {
+  port:                  587,
+  address:               'smtp.gmail.com',
+  domain:                'smtp.gmail.com',
+  user_name:             'tatsuya.takemura@gmail.com',
+  password:              'jxxotqhhaomfzxod',
+  authentication:        'login',
+  enable_starttls_auto:  true
+}
+
 
 #  config.action_mailer.smtp_settings = {
 #   port:                  587,
