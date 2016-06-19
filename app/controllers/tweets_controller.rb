@@ -34,12 +34,12 @@ class TweetsController < ApplicationController
 
   def show
      @tweet = Tweet.find(params[:id])
-     @comments = @tweet.comments.includes(:user)
+     @comments = @tweet.comments.includes(:user).order("created_at DESC")
   end
 
   def timeline
     @tweets = Tweet.includes(:user).order("day").page(params[:page]).per(10)
-
+    
   end
 
   def form_for

@@ -15,10 +15,30 @@
   <h2><%= @user.name %> 様</h2>
   <hr />
   <p>
-    この度は「メールテスト運営局」を利用頂きましてありがとうございます。
+    Braliからお知らせします。
   </p>
   <p>
-    ユーザー名: <%= @user.name %><br />
+
+  <%= @current.name %> さんからメッセージが届いております。<br />
+<br>
+メッセージの内容を確認するには<br>
+以下をクリックしてください。<br>
+ <br>
+ <a href="http://localhost:3000/tweets/<%= @tweet_id %>">
+ http://localhost:3000/tweets/<%= @tweet_id %>
+ </a>
+<br><br>
+＊このメールアドレスへの返信はしないで下さい。<br>
+
+<br><br>
+■□━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <br>
+<br>
+Brali:<br>
+https://fast-beach-17193.herokuapp.com/<br>
+<br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━□■<br>
+<br><br>
+
   </p>
   <hr />
 </body>
