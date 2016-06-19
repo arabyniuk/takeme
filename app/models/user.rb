@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   :bucket => S3_BUCKET,
   :path => ":attachment/:id/:style.:extension",
   :url => ':s3_domain_url',
-  :default_url => 'images/no_image.jpg'
+  :default_url => "no_image.jpg"
 
   # User.new.image(:small) => "/images/default_small_avatar.png"
 
