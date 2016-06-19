@@ -3,8 +3,10 @@ Rails.application.configure do
 # config.assets.precompile += ['*.js']
   # Code is not reloaded between requests.
   config.cache_classes = true
-
-config.action_mailer.smtp_settings = {
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
   port:                  587,
   address:               'smtp.gmail.com',
   domain:                'smtp.gmail.com',
@@ -13,6 +15,7 @@ config.action_mailer.smtp_settings = {
   authentication:        'login',
   enable_starttls_auto:  true
 }
+
 
 
 #  config.action_mailer.smtp_settings = {
