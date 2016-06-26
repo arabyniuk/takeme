@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   # 以下を追記
   # has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>", small:"45x45>"}, storage: :s3, bucket: S3_BUCKET
