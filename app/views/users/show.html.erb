@@ -45,7 +45,8 @@
 <div class="list-table">
 
   <p><%= @name %>さんの投稿一覧</p>
- <% @tweets.each do |tweet| %>
+
+ <% @tweets.each do |tweet| if tweet.day >= Date.today %>
 
 <tr>
 <td rowspan="6">
@@ -80,7 +81,7 @@
 <td><%= tweet.message %></td>
 </tr>
 
-
+<% end %>
 <% end %>
 </table>
 <%= paginate(@tweets) %>

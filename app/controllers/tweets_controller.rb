@@ -11,7 +11,7 @@ class TweetsController < ApplicationController
 
   def create
     Tweet.create(place: tweet_params[:place], day: tweet_params[:day], message: tweet_params[:message], user_id: current_user.id)
-    # Tweet.create(name: params[:name], place: params[:place], day: params[:day], message: params[:message])
+    # Tweet.create(name: params[:name], place: params[:place], day:params[:day], message: params[:message])
   end
 
   def destroy
@@ -34,12 +34,12 @@ class TweetsController < ApplicationController
 
   def show
      @tweet = Tweet.find(params[:id])
-     @comments = @tweet.comments.includes(:user).order("created_at DESC")
+     @comments = @tweet.comments.includes(:user).order("created_at")
   end
 
   def timeline
     @tweets = Tweet.includes(:user).order("day").page(params[:page]).per(10)
-    
+
   end
 
   def form_for

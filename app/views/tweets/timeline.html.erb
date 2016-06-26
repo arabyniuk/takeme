@@ -7,7 +7,7 @@
 <div class="list-table">
 
 
-<% @tweets.each do |tweet| %>
+<% @tweets.each do |tweet| if tweet.day >= Date.today %>
 
 
 <tr>
@@ -44,6 +44,7 @@
 <td><%= tweet.message %></td>
 </tr>
 
+<% end %>
 
 <% end %>
 </table>
@@ -52,6 +53,3 @@
   </div>
 
 </div>
-
-
-

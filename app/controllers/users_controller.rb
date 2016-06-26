@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @name = user.name
     @id = user.id
-    @tweets = user.tweets.page(params[:page]).per(5).order("created_at DESC")
+    @tweets = user.tweets.page(params[:page]).per(5).order("day")
   end
 
   def edit
