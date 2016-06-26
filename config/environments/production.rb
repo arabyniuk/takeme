@@ -16,7 +16,7 @@ Rails.application.configure do
   enable_starttls_auto:  true
 }
 
- config.action_mailer.default_url_options = { :host => 'yourapp.heroku.com' }
+ config.action_mailer.default_url_options = { :host => 'https://fast-beach-17193.herokuapp.com/' }
 
 #  config.action_mailer.smtp_settings = {
 #   port:                  587,
