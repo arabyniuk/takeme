@@ -20,7 +20,7 @@
 </td>
 
 <td><a href="/users/<%= tweet.user.id if tweet.user.present? %>">
-<%= tweet.user.name if tweet.user.present?%>
+<%= tweet.user.first_name if tweet.user.present?%>
 </a>
 </td>
 </tr>

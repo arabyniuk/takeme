@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   has_many :tweets
   has_many :comments
+  has_many :messages
 
   has_attached_file :image, styles: { medium:"300x300>", thumb:"150x150>", small:"45x45>"},
   :storage =>:s3,
@@ -15,6 +16,11 @@ class User < ActiveRecord::Base
   :path => ":attachment/:id/:style.:extension",
   :url => ':s3_domain_url',
   :default_url => "no_image.jpg"
+  
+
+
+
+
 
   # User.new.image(:small) => "/images/default_small_avatar.png"
 

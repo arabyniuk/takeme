@@ -3,8 +3,6 @@
 
 <div class = "contents row">
 
-
-
 <div class="mypage-left">
 
   <%= image_tag @user.image.url(:thumb) %>
@@ -12,11 +10,19 @@
 </div>
 
 
+
 <div class="mypage-main">
    <div class="mypage-name">
-   <%= @user.name %>
+   <%= @user.first_name %>
+   <%= @user.last_name %>
    </h1>
   </div>
+
+
+  <a href="/users/<%= @user.id %>/messages">
+<img src="/assets/mail.jpg">
+  </a>
+
 <div class="mypage-place">
   <%= @user.place %>
   </div>
@@ -44,7 +50,7 @@
 <table BORDER="1" WIDTH="600">
 <div class="list-table">
 
-  <p><%= @name %>さんの投稿一覧</p>
+  <p><%= @first_name %>さんの投稿一覧</p>
 
  <% @tweets.each do |tweet| if tweet.day >= Date.today %>
 
@@ -57,7 +63,7 @@
 </td>
 
 <td><a href="/users/<%= tweet.user.id %>">
-<%= tweet.user.name %>
+<%= tweet.user.first_name %>
 </a>
 </td>
 </tr>

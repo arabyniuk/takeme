@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root 'tweets#index'
   get 'tweets/timeline' => 'tweets#timeline'
+  # get 'users/messages' => 'messages#index'
+  post 'users/messages' => 'messages#create'
+
   
   resources :tweets do
     resources :comments, only: [:create]
@@ -11,10 +14,20 @@ Rails.application.routes.draw do
     end
 
   end
-  resources :users, only: [:show, :edit, :update]
 
+#resources :users, only: [:show, :edit, :update]
+
+#resources :messages, only: [:index, :create]
+
+ 
+
+  resources :users do
+    resources :messages, only: [:index, :create]
+   end
 
 end
+
+
 
   # get 'tweets' => 'tweets#index'
   # get 'tweets/new' => 'tweets#new'

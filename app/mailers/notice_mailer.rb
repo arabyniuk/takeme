@@ -15,7 +15,7 @@ class NoticeMailer <  ApplicationMailer
    puts 'Current IDは'
    puts current_id 
    @current = User.find_by(id: current_id)
-  puts @current.name
+  puts @current.first_name
 
 
     mail to: @user.email,
