@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008130617) do
+ActiveRecord::Schema.define(version: 20161009142342) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -26,7 +26,10 @@ ActiveRecord::Schema.define(version: 20161008130617) do
     t.datetime "updated_at"
     t.integer  "user_id",    limit: 4
     t.string   "message",    limit: 255
+    t.integer  "sender_id",  limit: 4
   end
+
+  add_index "messages", ["sender_id"], name: "fk_rails_b8f26a382d", using: :btree
 
   create_table "tweets", force: :cascade do |t|
     t.text     "place",      limit: 65535
@@ -78,4 +81,5 @@ ActiveRecord::Schema.define(version: 20161008130617) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "messages", "users", column: "sender_id"
 end

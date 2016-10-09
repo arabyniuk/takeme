@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.create(message: params[:message], user_id: params[:user_id])
+    @message = Message.create(message: params[:message], user_id: params[:user_id], sender: current_user)
 
     user = User.find(params[:user_id])
 

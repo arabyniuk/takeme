@@ -1,10 +1,12 @@
 <div class="container">
-      <%= puts "ユーザーは",@id %>
+  <%= puts "ユーザーは",@id %>
 
-      <%= form_tag("/users/#{@user.id}/messages", method: :post) do %>
-        <textarea cols="30" name="message" placeholder="Comment" rows="2"></textarea>
-        <input type="submit" value="SEND">
-      <% end %>
+  <%= form_tag("/users/#{@user.id}/messages", method: :post) do %>
+    <textarea cols="30" name="message" placeholder="Comment" rows="2"></textarea>
+    <input type="submit" value="SEND">
+  <% end %>
 
- </div>
+  <h1>Past Message</h1>
 
+  <%= render @user.messages %>
+</div>

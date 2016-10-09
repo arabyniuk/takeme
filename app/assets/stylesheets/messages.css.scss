@@ -1,3 +1,18 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.message {
+  background: #f5f5f5;
+  padding: 10px;
+  margin-bottom: 30px;
+
+  .sender-name a {
+    color: #57c3e9;
+    font-weight: bold;
+  }
+
+  .sender-avatar, .sender-name, .text {
+    margin-bottom: 5px;
+  }
+}
