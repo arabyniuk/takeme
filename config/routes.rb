@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'tweets#index'
   get 'tweets/timeline' => 'tweets#timeline'
-  # get 'users/messages' => 'messages#index'
+  get 'users/messages' => 'messages#index'
   post 'users/messages' => 'messages#create'
 
   
