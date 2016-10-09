@@ -1,0 +1,17 @@
+<div class="message">
+  <div class="sender-avatar">
+    <%= image_tag(message.sender_image) %>
+  </div>
+
+  <div class="sender-name">
+    <%= link_to(message.sender_first_name, message.sender) %>
+  </div>
+
+  <div class="text">
+    <%= message.message %>
+  </div>
+
+  <div class="created-at">
+    <%= message.created_at %>
+  </div>
+</div>
