@@ -1,5 +1,4 @@
 <div class="container">
-  <%= puts "ユーザーは",@id %>
 
   <%= form_tag("/users/#{@user.id}/messages", method: :post) do %>
     <textarea cols="30" name="message" placeholder="Comment" rows="2"></textarea>
