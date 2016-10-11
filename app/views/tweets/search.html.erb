@@ -7,7 +7,7 @@
 
   <div class="list-table">
 
-  <p><%= params[:keyword] %>に旅行する投稿一覧</p>
+  <p><%= params[:keyword] %>に旅行する人の投稿一覧</p>
 
   <% @tweets.each do |tweet| if tweet.day >= Date.today %>
 
@@ -19,7 +19,8 @@
   </td>
 
   <td><a href="/users/<%= tweet.user.id %>">
-  <%= tweet.user.first_name %><%= tweet.user.last_name %>
+  <%= tweet.user.first_name %>
+  <%= tweet.user.last_name %>
   </a>
   </td>
   </tr>
