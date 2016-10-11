@@ -49,9 +49,15 @@ class TweetsController < ApplicationController
 
  def search
   # @tweets = Tweet.where('place LIKE(?)',"%#{params[:keyword]}%").limit(10)
+  puts "KINDは"
+  @kind = params[:kind]
+  puts @kind
+
   @tweets = Tweet.where('place LIKE(?)',"%#{params[:keyword]}%").order("day").page(params[:page]).per(5)
   @user = User.find_by(id: @user_id)
-  
+
+
+  @users = User.where('place LIKE(?)',"%#{params[:keyword]}%").order("last_sign_in_at").page(params[:page]).per(5)
 
 end
 

@@ -41,6 +41,10 @@ var input = document.getElementById( 'keyword');
       
 <div class = "search">
   <%= form_tag('/tweets/search', method: :get) do %>
+  <select name="kind" id="kind">
+    <option>Traveler</option>
+    <option>Host</option>
+  </select>
   <input name="keyword" id="keyword" value="" type="text">
   <button id="btn-search" title="search" type="submit"></button>
   </input>

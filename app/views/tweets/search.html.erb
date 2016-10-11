@@ -1,57 +1,92 @@
 
 <div class = "contents row">
 
-<table BORDER="1" WIDTH="600">
+<% if params[:kind] == "Traveler" %>
 
-<div class="list-table">
+  <table BORDER="1" WIDTH="600">
 
-<p><%= params[:keyword] %>の投稿一覧</p>
+  <div class="list-table">
 
-<% @tweets.each do |tweet| if tweet.day >= Date.today %>
+  <p><%= params[:keyword] %>に旅行する投稿一覧</p>
 
+  <% @tweets.each do |tweet| if tweet.day >= Date.today %>
 
-<tr>
-<td rowspan="6">
-<a href="/tweets/<%= tweet.id %>">
+  <tr>
+  <td rowspan="6">
+  <a href="/tweets/<%= tweet.id %>">
+  <%= image_tag tweet.user.image.url(:thumb) %>
+  </a>
+  </td>
 
-<%= image_tag tweet.user.image.url(:thumb) %>
-</a>
-</td>
+  <td><a href="/users/<%= tweet.user.id %>">
+  <%= tweet.user.first_name %><%= tweet.user.last_name %>
+  </a>
+  </td>
+  </tr>
 
-<td><a href="/users/<%= tweet.user.id %>">
-<%= tweet.user.first_name %><%= tweet.user.last_name %>
-</a>
-</td>
-</tr>
+  <tr><td>From: <%= tweet.user.place %></td>
+  </tr>
+  <tr>
+  <td>Language: <%= tweet.user.language1 %></td>
+  </tr>
+  </tr>
+  <tr>
+  <td>Visiting: <%= tweet.place %></td>
+  </tr>
+  <tr>
+  <td><%= tweet.day %></td>
+  </tr>
+  <tr>
+  <td><%= tweet.message %></td>
+  </tr>
 
-<tr><td>From: <%= tweet.user.place %></td>
-
-</tr>
-<tr>
-<td>Language: <%= tweet.user.language1 %></td>
-</tr>
-
-</tr>
-<tr>
-<td>Visiting: <%= tweet.place %></td>
-</tr>
-
-<tr>
-<td><%= tweet.day %></td>
-</tr>
-<tr>
-<td><%= tweet.message %></td>
-</tr>
-
-<% end %>
-
-<% end %>
+  <% end %>
+  <% end %>
 
 </table>
 <%= paginate(@tweets) %>
 
   </div>
- 
+
+<% end %>
+
+
+
+<% if params[:kind] == "Host" %>
+
+  <table BORDER="1" WIDTH="600">
+
+  <div class="list-table">
+
+  <p><%= params[:keyword] %>に住んでる人</p>
+
+  <% @users.each do |user| %>
+
+  <tr>
+  <td rowspan="6">
+  <a href="/users/<%= user.id %>">
+  <%= image_tag user.image.url(:thumb) %>
+  </a>
+  </td>
+  <td><a href="/users/<%= user.id %>">
+  <%= user.first_name %><%= user.last_name %>
+  </a>
+  </td>
+  </tr>
+
+  <tr><td>From: <%= user.place %></td>
+  </tr>
+  </tr>
+
+<% end %>
+
+
+
+<% end %>
+</table>
+<%= paginate(@tweets) %>
+
+
 </div>
 
 
