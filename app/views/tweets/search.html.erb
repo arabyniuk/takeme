@@ -63,20 +63,21 @@
   <% @users.each do |user| %>
 
   <tr>
-  <td rowspan="6">
+  <td rowspan="2">
   <a href="/users/<%= user.id %>">
   <%= image_tag user.image.url(:thumb) %>
   </a>
   </td>
   <td><a href="/users/<%= user.id %>">
-  <%= user.first_name %><%= user.last_name %>
+  <%= user.first_name %>
+  <%= user.last_name %>
   </a>
   </td>
   </tr>
 
   <tr><td>From: <%= user.place %></td>
   </tr>
-  </tr>
+
 
 <% end %>
 
