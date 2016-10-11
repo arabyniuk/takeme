@@ -1,5 +1,7 @@
 class AddImageToUsers < ActiveRecord::Migration
   def change
-    add_column :users, :image, :string
+    if !column_exists?(:users, :image)
+      add_column :users, :image, :string
+    end
   end
 end

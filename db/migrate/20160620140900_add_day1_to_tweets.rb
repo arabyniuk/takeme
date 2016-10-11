@@ -1,5 +1,7 @@
 class AddDay1ToTweets < ActiveRecord::Migration
   def change
-    add_column :tweets, :day1, :datetime
+    if !column_exists?(:tweets, :day1)
+      add_column :tweets, :day1, :datetime
+    end
   end
 end
