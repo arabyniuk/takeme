@@ -1,5 +1,7 @@
 class AddMessageToMessages < ActiveRecord::Migration
   def change
-    add_column :messages, :message, :string
+    if !column_exists?(:messages, :message)
+      add_column :messages, :message, :string
+    end
   end
 end
