@@ -26,6 +26,12 @@
         Last Name:
         <%= f.text_field :last_name %>
         <br>
+
+        
+        Sex:
+        <%= f.select :sex, ['male', 'female','Not specified'],  :include_blank => true %>
+        
+        <br><br>
         Language:
         <%= f.text_field :language1 %>
         <br>
