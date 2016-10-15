@@ -10,13 +10,15 @@ class UsersController < ApplicationController
 
     @tweets = user.tweets.page(params[:page]).per(5).order("day")
 
-     @birthday  = user.birthday
-     date_format = "%Y%m%d"
-     birthday = @birthday.to_date
-     puts "何日？"
-     puts Date.today.strftime(date_format).to_i
-     puts birthday.strftime(date_format).to_i
-     @age  = ((Date.today.strftime(date_format).to_i) -(birthday.strftime(date_format).to_i)) / 10000
+
+     if user.birthday.present? then
+       @birthday  = user.birthday
+       date_format = "%Y%m%d"
+       birthday = @birthday.to_date
+       @age  = ((Date.today.strftime(date_format).to_i) -(birthday.strftime(date_format).to_i)) / 10000
+      else
+       @age=""
+      end
 
   end
 
