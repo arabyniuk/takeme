@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161012140606) do
+ActiveRecord::Schema.define(version: 20161015002727) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -79,6 +79,8 @@ ActiveRecord::Schema.define(version: 20161012140606) do
     t.string   "birth_month",            limit: 255
     t.string   "birth_day",              limit: 255
     t.string   "birth_year",             limit: 255
+    t.string   "birth",                  limit: 255
+    t.string   "birthday",               limit: 255
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

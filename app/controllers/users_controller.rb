@@ -6,7 +6,18 @@ class UsersController < ApplicationController
     @first_name = user.first_name
     @last_name = user.last_name
     @id = user.id
+
+
     @tweets = user.tweets.page(params[:page]).per(5).order("day")
+
+     @birthday  = user.birthday
+     date_format = "%Y%m%d"
+     birthday = @birthday.to_date
+     puts "何日？"
+     puts Date.today.strftime(date_format).to_i
+     puts birthday.strftime(date_format).to_i
+     @age  = ((Date.today.strftime(date_format).to_i) -(birthday.strftime(date_format).to_i)) / 10000
+
   end
 
   def edit
@@ -15,6 +26,12 @@ class UsersController < ApplicationController
   def update
      current_user.update(update_params)
   end
+
+  def select
+     @user = User.new(sex: 'male')
+
+  end
+
 
 
  # def messages
@@ -33,11 +50,9 @@ class UsersController < ApplicationController
 
 private
   def update_params
-    params.require(:user).permit(:first_name, :last_name, :sex, :image, :language1, :language2, :fb, :place)
-  end
-
-
-
+    params.require(:user).permit(:first_name, :last_name, :sex, :birthday, :image, :language1, :language2, :fb, :place)
 end
+end
+
 
 
