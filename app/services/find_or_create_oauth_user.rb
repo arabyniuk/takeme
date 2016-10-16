@@ -14,7 +14,7 @@ class FindOrCreateOauthUser
   def create_user
     user = User.new(user_attributes)
 
-    # user.image = URI.parse(auth_data.extra.raw_info.picture.data.url)
+    user.image = URI.parse(auth_data.extra.raw_info.picture.data.url)
 
     user.skip_confirmation!
     user.save!
@@ -28,7 +28,7 @@ class FindOrCreateOauthUser
       password: Devise.friendly_token[0, 20],
       first_name: auth_data.info.first_name,
       last_name: auth_data.info.last_name,
-      sex: auth_data.extra.gender
+      sex: auth_data.extra.raw_info.gender
     }
   end
 

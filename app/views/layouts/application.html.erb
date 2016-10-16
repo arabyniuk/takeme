@@ -71,9 +71,10 @@ var input = document.getElementById( 'keyword');
       <% else %>
 
         <div class="grid-6">
-          <%= link_to "Log in", new_user_session_path, class: 'post' %>
-          <%= link_to "Log in with Facebook", user_omniauth_authorize_path(:facebook), class: 'post' %>
-          <%= link_to "Sign up", new_user_registration_path, class: 'post' %>
+          <%= render 'layouts/signup_modal' %>
+          <%= render 'layouts/login_modal' %>
+          <%= link_to 'Log in', '#', class: 'post login-link' %>
+          <%= link_to 'Sign up', '#', class: 'post signup-link' %>
         </div>
       <% end %>
 

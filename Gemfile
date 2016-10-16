@@ -59,6 +59,7 @@ gem 'meta-tags'
 gem 'dotenv-rails'
 gem 'interactor-rails'
 gem 'omniauth-facebook'
+gem 'font-awesome-rails'
 
 group :production do
   gem 'rails_12factor'
