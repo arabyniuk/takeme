@@ -1,0 +1,44 @@
+<div id="signup_modal" class="modal">
+  <div class="modal-header">
+    <h3>Sign up</h3>
+    <div class="close">×</div>
+  </div>
+
+  <div class="modal-content">
+    <%= form_for(:user, url: registration_path(:user)) do |f| %>
+      <div class="field login-field name">
+        <%= f.text_field :first_name, autofocus: true, placeholder: true %>
+      </div>
+
+      <div class="field login-field name">
+        <%= f.text_field :last_name, placeholder: true %>
+      </div>
+
+      <div class="field login-field">
+        <%= f.email_field :email, placeholder: true %>
+      </div>
+
+      <div class="field login-field">
+        <%= f.password_field :password, autocomplete: "off", placeholder: true %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Join with Email", class: 'square-button login' %>
+      </div>
+    <% end %>
+
+    <div class="divider">
+      <hr class="left">or<hr class="right">
+    </div>
+
+    <%= link_to user_omniauth_authorize_path(:facebook), class: 'square-button facebook' do %>
+      <i class="fa fa-facebook"></i>Join with Facebook
+    <% end %>
+
+    <div class="join-section">
+      <p>Already a member?</p>
+
+      <%= link_to 'Log in', '#', class: 'post login-link' %>
+    </div>
+  </div>
+</div>

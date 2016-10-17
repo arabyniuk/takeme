@@ -15,7 +15,7 @@ Devise.setup do |config|
 
   config.mailer_sender = "'ブラリ事務局' <no-reply@example.com>"
   #config.mailer_sender = '"Brali" <no_reply@example.com>'
-  
+
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -240,7 +240,12 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+
+  config.omniauth :facebook,
+    ENV['FACEBOOK_KEY'],
+    ENV['FACEBOOK_SECRET'],
+    scope: 'email,public_profile',
+    info_fields: 'picture,first_name,last_name,email,gender'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

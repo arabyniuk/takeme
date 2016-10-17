@@ -1,0 +1,45 @@
+<div id="login_modal" class="modal">
+  <div class="modal-header">
+    <h3>Log in</h3>
+    <div class="close">×</div>
+  </div>
+
+  <div class="modal-content">
+    <%= form_for(:user, url: session_path(:user)) do |f| %>
+      <div class="field login-field">
+        <%= f.email_field :email, autofocus: true, placeholder: true %>
+      </div>
+
+      <div class="field login-field">
+        <%= f.password_field :password, autocomplete: "off", placeholder: true %>
+      </div>
+
+      <div class="reset-password">
+        <%= link_to "Forgot password?", new_password_path(resource_name) %>
+      </div>
+
+      <div class="field remember-me">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Log In", class: 'square-button login' %>
+      </div>
+    <% end %>
+
+    <div class="divider">
+      <hr class="left">or<hr class="right">
+    </div>
+
+    <%= link_to user_omniauth_authorize_path(:facebook), class: 'square-button facebook' do %>
+      <i class="fa fa-facebook"></i>Continue with Facebook
+    <% end %>
+
+    <div class="join-section">
+      <p>Don't have an account?</p>
+
+      <%= link_to 'Join', '#', class: 'post signup-link' %>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   root 'tweets#index'
   get 'tweets/timeline' => 'tweets#timeline'
   get 'users/messages' => 'messages#index'
   post 'users/messages' => 'messages#create'
 
-  
+
   resources :tweets do
     resources :comments, only: [:create]
 
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
 #resources :messages, only: [:index, :create]
 
- 
+
 
   resources :users do
     resources :messages, only: [:index, :create]

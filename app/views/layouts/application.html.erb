@@ -38,7 +38,7 @@ var input = document.getElementById( 'keyword');
         <li><a href="/tweets/timeline">TimeLine </a></li>
       </ul>
       </h1>
-      
+
 <div class = "search">
   <%= form_tag('/tweets/search', method: :get) do %>
   <select name="kind" id="kind">
@@ -52,9 +52,9 @@ var input = document.getElementById( 'keyword');
 
   <% end %>
 
-     
+
   <% if user_signed_in? %>
-       
+
         <div class="user_nav grid-6">
           <span>
            <%= image_tag current_user.image.url(:small) %>
@@ -69,19 +69,21 @@ var input = document.getElementById( 'keyword');
         </div>
 
       <% else %>
-  
+
         <div class="grid-6">
-          <%= link_to "Log in", new_user_session_path, class: 'post' %>
-          <%= link_to "Sign up", new_user_registration_path, class: 'post' %>
+          <%= render 'layouts/signup_modal' %>
+          <%= render 'layouts/login_modal' %>
+          <%= link_to 'Log in', '#', class: 'post login-link' %>
+          <%= link_to 'Sign up', '#', class: 'post signup-link' %>
         </div>
       <% end %>
-   
+
       <!-- <div class="lang">
           <a href="/tweets/english>">English</a>
       </div>
  -->
 
-  
+
   </div>
   </header>
 

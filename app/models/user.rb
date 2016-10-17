@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   # 以下を追記
@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   :path => ":attachment/:id/:style.:extension",
   :url => ':s3_domain_url',
   :default_url => "no_image.jpg"
-  
+
 
 
 

@@ -43,6 +43,8 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'quiet_assets'
 end
 
 gem 'pry-rails'
@@ -54,6 +56,10 @@ gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
 gem 'jquery-turbolinks'
 gem 'meta-tags'
+gem 'dotenv-rails'
+gem 'interactor-rails'
+gem 'omniauth-facebook'
+gem 'font-awesome-rails'
 
 group :production do
   gem 'rails_12factor'

@@ -18,3 +18,24 @@
 //= require jquery.turbolinks
 //= require turbolinks
 
+$(function() {
+  $('.login-link').on('click', function() {
+    $('.modal').css('display', 'none');
+    $('#login_modal').css('display', 'block');
+  });
+
+  $('.signup-link').on('click', function() {
+    $('.modal').css('display', 'none');
+    $('#signup_modal').css('display', 'block');
+  });
+
+  $('.close').on('click', function(e) {
+    $('.modal').css('display', 'none');
+  });
+
+  $(window).on('click', function(e) {
+    if ($(e.target).attr('class') === 'modal') {
+      $('.modal').css('display', 'none');
+    }
+  });
+});
