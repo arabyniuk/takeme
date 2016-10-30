@@ -3,43 +3,63 @@
 
 <% if params[:kind] == "Traveler" %>
 
-  <table BORDER="1" WIDTH="600">
+  <table BORDER="1" WIDTH="900">
 
   <div class="list-table">
 
-  <p><%= params[:keyword] %>に旅行する人の投稿一覧</p>
+  <div class="timeline-title">
+  <p>Travelers in <%= params[:keyword] %></p>
+  </div>
 
   <% @tweets.each do |tweet| if tweet.day >= Date.today %>
 
   <tr>
-  <td rowspan="6">
-  <a href="/tweets/<%= tweet.id %>">
-  <%= image_tag tweet.user.image.url(:thumb) %>
+  <td rowspan="7">
+  <a href="/users/<%= tweet.user.id %>">
+  <div class="timeline-pic">
+  <%= image_tag tweet.user.image.url(:medium) %>
+  </div>
   </a>
   </td>
 
+  <td><div class="timeline-day">
+    <%= tweet.day %></div></td>
+  </tr>
+
   <td><a href="/users/<%= tweet.user.id %>">
+  <div class ="timeline-name">
   <%= tweet.user.first_name %>
   <%= tweet.user.last_name %>
+  </div>
   </a>
   </td>
-  </tr>
+  
 
   <tr><td>From: <%= tweet.user.place %></td>
   </tr>
   <tr>
-  <td>Language: <%= tweet.user.language1 %></td>
+  <td>Speaks: <%= tweet.user.language1 %></td>
   </tr>
   </tr>
   <tr>
   <td>Visiting: <%= tweet.place %></td>
   </tr>
+  
   <tr>
-  <td><%= tweet.day %></td>
+  <td><br><%= tweet.message %></td>
   </tr>
-  <tr>
-  <td><%= tweet.message %></td>
-  </tr>
+
+<tr><td>
+<br>
+<a href="/tweets/<%= tweet.id %>">
+<img src="/assets/comment.png" width="120">
+  </a>
+  </td></tr>
+  
+   <tr><td colspan="2">
+    <BR><HR><BR>
+  </td></tr>
+
 
   <% end %>
   <% end %>
@@ -58,26 +78,34 @@
   <table BORDER="1" WIDTH="600">
 
   <div class="list-table">
-
-  <p><%= params[:keyword] %>に住んでる人</p>
+<div class="timeline-title">
+  <p>Resident in <%= params[:keyword] %></p>
+  </div>
 
   <% @users.each do |user| %>
 
   <tr>
   <td rowspan="2">
   <a href="/users/<%= user.id %>">
-  <%= image_tag user.image.url(:thumb) %>
+  <%= image_tag user.image.url(:medium) %>
   </a>
   </td>
   <td><a href="/users/<%= user.id %>">
+  <div class="timeline-name">
   <%= user.first_name %>
   <%= user.last_name %>
+  <div>
   </a>
   </td>
   </tr>
 
-  <tr><td>From: <%= user.place %></td>
+
+  <tr><td>Residence: <%= user.place %></td>
   </tr>
+
+ <tr><td colspan="2">
+    <BR><HR><BR>
+  </td></tr>
 
 
 <% end %>

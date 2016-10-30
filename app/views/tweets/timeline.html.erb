@@ -1,55 +1,78 @@
 
+<div class= "timeline">
+
 <div class = "contents row">
 
-
-<table BORDER="1" WIDTH="600">
-
-<div class="list-table">
-
+<table WIDTH="900">
 
 <% @tweets.each do |tweet| if tweet.day >= Date.today %>
+
+
+
+<!-- <div class="list-table">  -->
 
 
 <tr>
 <td rowspan="6">
 <a href="/tweets/<%= tweet.id %>">
-
-<%= image_tag tweet.user.image.url(:thumb) if tweet.user.present? %>
-
+<div class="timeline-pic">
+<%= image_tag tweet.user.image.url(:medium) if tweet.user.present? %>
+  </div>
 </a>
 </td>
-
-<td><a href="/users/<%= tweet.user.id if tweet.user.present? %>">
-<%= tweet.user.first_name if tweet.user.present?%>
-</a>
+ 
+<td>
+<%= tweet.day %>
 </td>
 </tr>
+
+
+
+<td><a href="/users/<%= tweet.user.id if tweet.user.present? %>">
+<div class="timeline-name">
+<%= tweet.user.first_name if tweet.user.present?%>
+<%= tweet.user.last_name if tweet.user.present?%>
+</div>
+</a>
+</td>
+
 
 <tr><td>From: <%= tweet.user.place if tweet.user.present?%></td>
 
 </tr>
+
 <tr>
-<td>Language: <%= tweet.user.language1 if tweet.user.present?%></td>
+<td>Speak: <%= tweet.user.language1 if tweet.user.present?%></td>
 </tr>
 
-</tr>
 <tr>
 <td>Visiting: <%= tweet.place %></td>
 </tr>
 
 <tr>
-<td><%= tweet.day %></td>
+<td><br><%= tweet.message %></td>
+
 </tr>
-<tr>
-<td><%= tweet.message %></td>
-</tr>
+
+  <tr><td colspan="2">
+    <BR><HR><BR>
+  </td></tr>
+
+
+</div>
 
 <% end %>
 
+
 <% end %>
+
+
 </table>
+
+
 <%= paginate(@tweets) %>
 
-  </div>
+  
 
+</div>
 </div>

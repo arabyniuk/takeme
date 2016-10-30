@@ -18,21 +18,40 @@
 <% end %>
   -->
 
+
+
 <div class="contents row">
 
+<table BORDER="1" WIDTH="900">
+
+
+
+<!-- <div class="list-table"> -->
+
+<tr>
+  <td rowspan="2">
  <a href="/users/<%= @tweet.user.id %>">
           <%= image_tag @tweet.user.image.url(:thumb) %>
  </a>
- <p>
-<span class="name">
+ </td>
+
+<td>
     <a href="/users/<%= @tweet.user.id %>">
+    <span class="timeline-name">
       <%= @tweet.user.first_name %>
-    </a>
-  </span>
-   <p>
+      <%= @tweet.user.last_name %>
+    </span>
+    </td>
+  </tr>
+
+  <tr><td>
   <%= @tweet.message %>
-  </p>
-  
+  </td></tr>
+
+</table>
+  </div>
+
+
 
   <div class="container">
       <%= form_tag("/tweets/#{@tweet.id}/comments", method: :post) do %>
@@ -40,7 +59,7 @@
         <input type="submit" value="SEND">
       <% end %>
 
- </div>
+ 
 
    <div class="comments">
      <h4>Comments</h4>
@@ -65,4 +84,5 @@
         <% end %>
 
     </div>
+  </div>
   </div>
