@@ -13,8 +13,8 @@
 
 
 <tr>
-<td rowspan="6">
-<a href="/tweets/<%= tweet.id %>">
+<td rowspan="7">
+<a href="/users/<%= tweet.user.id if tweet.user.present? %>">
 <div class="timeline-pic">
 <%= image_tag tweet.user.image.url(:medium) if tweet.user.present? %>
   </div>
@@ -51,8 +51,15 @@
 
 <tr>
 <td><br><%= tweet.message %></td>
-
 </tr>
+
+<tr><td>
+<br>
+<a href="/tweets/<%= tweet.id %>">
+<img src="/assets/comment.png" width="120">
+  </a>
+  </td></tr>
+
 
   <tr><td colspan="2">
     <BR><HR><BR>
