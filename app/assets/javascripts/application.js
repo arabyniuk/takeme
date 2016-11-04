@@ -38,4 +38,14 @@ $(function() {
       $('.modal').css('display', 'none');
     }
   });
+
+  $('.search-icon').on('click', function(e) {
+    e.preventDefault();
+    $('.search').toggleClass('desktop');
+  });
+
+  $('.user-icon').on('click', function(e) {
+    e.preventDefault();
+    $('.user-login').toggleClass('desktop');
+  });
 });

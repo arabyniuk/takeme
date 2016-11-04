@@ -1,0 +1,198 @@
+.desktop { display: block; }
+.mobile { display: none; }
+
+.icons {
+  .search-icon {
+    background-image: url('/assets/search-with-magnifier-in-circular-button.svg');
+  }
+  .user-icon {
+    background-image: url('/assets/user.svg');
+  }
+
+  a {
+    background-size: cover;
+    cursor: pointer;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    &:last-child { margin-left: 10px; }
+  }
+
+  float: right;
+}
+
+@media only screen and (max-width: 780px) {
+  header.header div.header__bar.row h1.grid-6 {
+    width: auto !important;
+    margin-top: 3px !important;
+  }
+
+  .desktop { display: none; }
+  .mobile { display: block; }
+
+  div.contents1 {
+    padding: 50px 0px 70px 0px;
+    text-align: center;
+
+    h2 { font-size: 24px; }
+    .text1 {
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 12px;
+    }
+    .search2 {
+      select {
+        margin-bottom: 5px;
+      }
+      padding-left: 0;
+    }
+  }
+
+  .contents2 {
+    padding: 0 30px 20px;
+
+    h2 { font-size: 24px; }
+
+    .text1 {
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 12px;
+    }
+
+    text-align: center;
+  }
+
+  div.maintitle {
+    font-size: 80px;
+  }
+
+  div.user-login {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    clear: both;
+    float: right;
+    div.user_nav {
+      span { margin-left: 0; }
+      position: static;
+    }
+    div.grid-6 {
+      height: auto;
+      width: 100%;
+      float: none !important;
+      text-align: center !important;
+      a.post { margin-top: 10px; }
+
+      #login_modal, #signup_modal {
+        padding-top: 10px;
+        .modal-header {
+          width: 90%;
+        }
+        .modal-content {
+          width: 90%;
+          .join-section {
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+
+  div.search {
+    clear: both;
+    margin-top: 15px;
+    float:right;
+  }
+
+  .timeline {
+    table {
+      width: 100%;
+     }
+  }
+
+
+}
+
+@media only screen and (max-width: 580px) {
+  div.maintitle {
+    background-size: 100% 380px;
+    font-size: 60px;
+    padding: 85px 0px 85px 0;
+  }
+
+  .icons {
+    margin-top: 5px;
+    a {
+      height: 32px;
+      width: 32px;
+    }
+  }
+
+  header.header div.header__bar.row  {
+    padding: 0 10px !important;
+    h1.grid-6 {
+      ul li { padding-right: 8px !important; }
+      font-size: 12px !important;
+    }
+  }
+
+  .text1 {
+    line-height: 15px;
+  }
+
+  div.contents1 {
+    padding: 10px 0;
+  }
+
+  .search {
+    width: 100%;
+
+    input#keyword {
+      width: 60%;
+      font-size: 16px;
+    }
+    select {
+      float: left;
+      margin-top: 2px;
+    }
+    input[type='submit'] { float: right; }
+  }
+
+  div.user-login {
+    width: 100%;
+
+    div.grid-6 > {
+       a.login-link { float: left; }
+       a.signup-link { float: right; }
+   }
+  }
+
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    position: relative;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  .text-footer center { font-size: 10px; }
+}

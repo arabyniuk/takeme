@@ -39,7 +39,6 @@ class TweetsController < ApplicationController
 
   def timeline
     @tweets = Tweet.includes(:user).order("day").page(params[:page]).per(10)
-
   end
 
   def form_for

@@ -42,20 +42,27 @@ var input = document.getElementById( 'keyword');
       </ul>
       </h1>
 
-<div class = "search">
+
+<div class="icons mobile">
+  <a class="search-icon"></a>
+  <a class="user-icon"></a>
+</div>
+
+<div class="search desktop">
   <%= form_tag('/tweets/search', method: :get) do %>
   <select name="kind" id="kind">
     <option>Traveler</option>
     <option>Host</option>
   </select>
   <input name="keyword" id="keyword" value="" type="text">
-  <button id="btn-search" title="search" type="submit"></button>
+  <input id="btn-search" type="submit" value="">
   </input>
 </div>
 
   <% end %>
 
 
+<div class="user-login desktop">
   <% if user_signed_in? %>
 
         <div class="user_nav grid-6">
@@ -80,6 +87,7 @@ var input = document.getElementById( 'keyword');
           <%= link_to 'Sign up', '#', class: 'post signup-link' %>
         </div>
       <% end %>
+</div>
 
       <!-- <div class="lang">
           <a href="/tweets/english>">English</a>

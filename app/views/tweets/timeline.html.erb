@@ -14,11 +14,11 @@
 
 <tr>
 <td rowspan="7">
-<a href="/users/<%= tweet.user.id if tweet.user.present? %>">
-<div class="timeline-pic">
-<%= image_tag tweet.user.image.url(:medium) if tweet.user.present? %>
-  </div>
-</a>
+  <a href="/users/<%= tweet.user.id if tweet.user.present? %>">
+    <div class="timeline-pic">
+      <%= image_tag tweet.user.image.url(:medium) if tweet.user.present? %>
+    </div>
+  </a>
 </td>
  
 <td>
