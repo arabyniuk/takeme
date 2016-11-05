@@ -63,7 +63,9 @@
   }
 
   div.maintitle {
+    background-position: center 80px;
     font-size: 80px;
+    padding: 30px 0px 110px;
   }
 
   div.user-login {
@@ -103,20 +105,21 @@
     float:right;
   }
 
-  .timeline {
+  .contents {
+    padding: 0 0 0 0 !important;
     table {
       width: 100%;
      }
   }
 
+  .notice { margin: 20px 15px 5px 15px; }
 
 }
 
 @media only screen and (max-width: 580px) {
   div.maintitle {
-    background-size: 100% 380px;
-    font-size: 60px;
-    padding: 85px 0px 85px 0;
+    font-size: 30px;
+    padding: 40px 0px 40px 0;
   }
 
   .icons {
@@ -195,4 +198,8 @@
   }
 
   .text-footer center { font-size: 10px; }
+
+  .notice, .alert {
+    font-size: 10px;
+  }
 }
