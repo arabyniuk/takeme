@@ -117,11 +117,6 @@
 }
 
 @media only screen and (max-width: 580px) {
-  div.maintitle {
-    font-size: 30px;
-    padding: 40px 0px 40px 0;
-  }
-
   .icons {
     margin-top: 5px;
     a {
@@ -201,5 +196,36 @@
 
   .notice, .alert {
     font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  div.maintitle {
+    background-position: center 90px;
+    font-size: 60px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  div.maintitle {
+    font-size: 45px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  div.maintitle {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  div.maintitle {
+    font-size: 35px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  div.maintitle {
+    font-size: 25px;
   }
 }
